@@ -1,4 +1,7 @@
-import PokemonCard from "./components/PokemonCard"
+import { useState } from 'react'
+import reactLogo from './assets/react.svg'
+import './App.css'
+import PokemonCard from "./components/PokemonCard.jsx"
 
 function App() {
   return (

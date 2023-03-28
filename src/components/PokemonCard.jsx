@@ -7,4 +7,4 @@ function PokemonCard() {
     );
 }
 
-export default PokemonCard();
+export default PokemonCard;
