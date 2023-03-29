@@ -8,10 +8,10 @@
 //     </div>
 // }
 
-function NavBar(props) {
+function NavBar({decrement, increment}) {
     <div>
-        <button onClick={props.decrement}>Previous</button>
-        <button onClick={props.increment}>Next</button>
+        <button onClick={decrement}>Previous</button>
+        <button onClick={increment}>Next</button>
     </div>
 }
 
