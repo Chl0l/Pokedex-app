@@ -8,7 +8,7 @@ function App() {
   const [pokemonIndex, setpokemonIndex] = useState(0);
 
   const incrementIndex = () => {
-    if (pokemonIndex < 4) {
+    if (pokemonIndex < pokemonList.length - 1) {
       setpokemonIndex(pokemonIndex+1)
     }
   }
