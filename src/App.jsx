@@ -7,7 +7,7 @@ function App() {
   
   const pokemonList = [
     {
-      name: "bulbasaur",
+      name: "Bulbasaur",
       imgSrc:
         "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/1.png",
     },
@@ -18,7 +18,7 @@ function App() {
 
   return (
     <div>
-      <PokemonCard pokemon = {pokemonList[1]} />
+      <PokemonCard pokemon = {pokemonList[0]} />
     </div>
   );
 }
