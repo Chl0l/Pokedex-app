@@ -4,32 +4,6 @@ import './App.css'
 import PokemonCard from "./components/PokemonCard.jsx"
 import NavBar from './components/NavBar.jsx'
 
-function App() {
-
-  const [pokemonIndex, setpokemonIndex] = useState(0);
-
-  const incrementIndex = () => {
-    if (pokemonIndex < pokemonList.length - 1) {
-      setpokemonIndex(pokemonIndex+1)
-    }
-  }
-  
-  const decrementIndex = () => {
-    if (pokemonIndex > 0) {
-      setpokemonIndex(pokemonIndex-1)
-    }
-  }
-
-  return (
-    <div>
-      < PokemonCard pokemon = {pokemonList[pokemonIndex]} />
-      < NavBar decrement={decrementIndex} increment={incrementIndex} />
-      {/* <button onClick={decrementIndex}>Previous</button>
-      <button onClick={incrementIndex}>Next</button> */}
-    </div>
-  );
-}
-
 const pokemonList = [
   {
       name: "bulbasaur",
@@ -56,4 +30,42 @@ const pokemonList = [
     },
   ];
 
+function App() {
+  const [pokemonIndex, setpokemonIndex] = useState(0);
+
+  return (
+    <div>
+      < PokemonCard pokemon = {pokemonList[pokemonIndex]} />
+      < NavBar pokemonList={pokemonList} pokemonIndex={pokemonIndex} setpokemonIndex={setpokemonIndex} />
+    </div>
+  );
+}
+
 export default App
+
+
+
+// Avec seulement dans "NavBar.jsx" les 2 boutons
+
+// function App() {
+//   const [pokemonIndex, setpokemonIndex] = useState(0);
+
+//   const incrementIndex = () => {
+//     if (pokemonIndex < pokemonList.length - 1) {
+//       setpokemonIndex(pokemonIndex+1)
+//     }
+//   }
+  
+//   const decrementIndex = () => {
+//     if (pokemonIndex > 0) {
+//       setpokemonIndex(pokemonIndex-1)
+//     }
+//   }
+
+//   return (
+//     <div>
+//       < PokemonCard pokemon = {pokemonList[pokemonIndex]} />
+//       < NavBar setpokemonIndex={decrementIndex} pokemonIndex={incrementIndex} />
+//     </div>
+//   );
+// }
