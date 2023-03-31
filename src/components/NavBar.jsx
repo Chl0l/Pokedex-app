@@ -1,33 +1,20 @@
 import React from 'react';
 
-function NavBar({pokemonList, pokemonIndex, setpokemonIndex}) {
+//Tu vas générer un bouton par pokémon dans le composant NavBar.
+//Enlève d'abord les boutons "précédent" et "suivant".
+//Boucle sur pokemonList directement dans le return du composant à l'aide de map.
 
-    const incrementIndex = () => {
-        if (pokemonIndex < pokemonList.length - 1) {
-          setpokemonIndex(pokemonIndex+1)
-      }
-    }
-      
-      const decrementIndex = () => {
-        if (pokemonIndex > 0) {
-          setpokemonIndex(pokemonIndex-1)
-        }
-      }
+function NavBar({pokemonList, setpokemonIndex}) {
 
-      const handleChange = () => {
-        if (pokemonIndex == 4) {
-          console.log("Pika pikachu !!!")
-        }
+      const handleClick = (id) => {
+          setpokemonIndex(id -1)
       }
       
     return (
         <div>
-            {pokemonIndex > 0 ? <button onClick={decrementIndex}>Previous</button> : ""}
-            {pokemonIndex < pokemonList.length - 1 ? <button onClick={incrementIndex}>Next</button> : ""}
+            {pokemonList.map((element) => <button key = {element.id} onClick={() => handleClick(element.id)}>{element.name}</button>)}
         </div>
     )
 }
 
 export default NavBar;
-
-// Ouvre ensuite une alerte avec le message "pika pikachu !!!" quand le pokémon choisi via le composant NavBar devient "pikachu" (mise à jour de NavBar). Pour cette 2e partie, "You Might Not Need an Effect".
